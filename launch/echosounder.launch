@@ -1,0 +1,12 @@
+<launch>
+
+	<!-- Launch EchoSounder driver -->
+	<node pkg="bluerobotics_echosounder" name="echosounder_driver" type="echosounder.py" output="screen">
+		<param name="port"				value="/dev/echosounder"/>	<!-- Serial port path -->
+		<param name="baud" 				value="115200"/>			<!-- Baudrate. Default is 115200 -->
+		<param name="rate"				value="10"/> 				<!-- Recommended between 5 and 20 -->
+		<param name="image_width"		value="512"/> 				<!-- Only width because height is limited by the ping protocol. Max 200-->
+		<param name="publish_image" 	value="true"/>				<!-- True or False -->
+	</node>
+
+</launch>
